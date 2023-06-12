@@ -1,0 +1,21 @@
+<div class="container">
+  <p-button label="Log in" (onClick)="onLogin()"></p-button>
+  <p-button label="Live Mode" (onClick)="onStart()"></p-button>
+</div>
+
+<div class="container">
+  <div class="card flex justify-content-center content default-width">
+    <p-listbox [options]="symbols" [(ngModel)]="selectedSymbol" [style]="{'width':'15rem'}" (onChange)="onChangeSelectedSymbol()"></p-listbox>
+  </div>
+  <p-card class="content" header="{{cryptoData?.symbol || '------'}}">
+    <p class="m-0">
+      BID: {{cryptoData?.bidPrice}}
+    </p>
+    <p class="m-0">
+      ASK: {{cryptoData?.askPrice}}
+    </p>
+    <p class="m-0">
+      ID: {{cryptoData?.lastId}}
+    </p>
+  </p-card>
+</div>
